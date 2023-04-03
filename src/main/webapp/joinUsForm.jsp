@@ -75,28 +75,30 @@ footer p {
 <div class="form-class">
 	<h1>join</h1>
 	<form action="/bookLion/userTest?action=insert" method="post">
-		<div class="basic-info">
+		<div class="user-info">
+			<label for="username">이름</label>
+			<input type="text" id="name" name="name" placeholder="이름을 입력해주세요">
 			<label for="userid">아이디</label>
-			<input type="text" id="userid" name="userid" placeholder="아이디를 입력해주세요">
+			<input type="text" id="id" name="id" placeholder="아이디를 입력해주세요">
 			<label for="password">비밀번호</label>
 			<input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요">
-			<label for="username">이름</label>
-			<input type="text" id="username" name="username" placeholder="이름을 입력해주세요">
-			<label for="address">주소</label>
-			<input type="text" id="address" name="address" placeholder="주소를 입력해주세요">
 			<label for="phone">전화번호</label>
 			<input type="text" id="phone" name="phone" placeholder="전화번호를 입력해주세요">
 			<label for="email">이메일</label>
 			<input type="email" id="email" name="email" placeholder="이메일을 입력해주세요">
 		</div>
-		<div class="add-info">
-			<label for="birth">생일</label> <input type="date" id="birth"
-				name="birth"> <br> <label for="account">계좌</label> <input
-				type="text" id="account" name="account" placeholder="환불 계좌">
-		</div>
 
 		<input type="submit" value="회원가입">
 
 	</form>
+	
+	<%if (session.getAttribute("id") != null) {%>
+	
+	<p> 현재 로그인 상태입니다.
+		사용자 이름 : <%=session.getAttribute("id") %> </p>
+		
+		<%} %>
+	
+	
 	</div>
 	<jsp:include page="/layout/footer.jsp" />

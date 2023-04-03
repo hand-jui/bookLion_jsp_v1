@@ -2,25 +2,11 @@
 	pageEncoding="UTF-8"%>
 <jsp:include page="/layout/header.jsp" />
 
-
-
-
 <section>
 	<div class="flex-container">
 		<div class="flex-item">
 			<div class="flex-item-child">
 				c-item1
-				<table>
-
-
-
-
-
-				</table>
-
-
-
-
 
 			</div>
 			<div class="flex-item-child">c-item2</div>

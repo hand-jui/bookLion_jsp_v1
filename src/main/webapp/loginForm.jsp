@@ -63,12 +63,13 @@ footer p {
 
 <div class="form-container">
 
-	<form action="/userTest" method="post">
-		<label>아이디</label> <input type="text" id="userid" name="userid"
-			required="required"> <label>비밀번호</label> <input
-			type="password" id="password" name="password" required="required">
-		<input type="submit" value="로그인"> <input type="submit"
-			value="회원가입">
+	<form action="/bookLion/userTest?action=select" method="post">
+		<label>아이디</label>
+		<input type="text" id="userid" name="userid" required="required"> 
+		<label>비밀번호</label>
+		<input type="password" id="password" name="password" required="required">
+		<input type="submit" value="로그인">
+		<input type="submit" value="회원가입" onclick="goJoinUsForm()">
 	</form>
 
 	<%

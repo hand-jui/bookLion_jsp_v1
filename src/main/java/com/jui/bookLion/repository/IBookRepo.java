@@ -6,10 +6,7 @@ public interface IBookRepo {
 
 	BookDTO select(String title);
 
-	int insert(BookDTO dto);
-
 	int update(int sale, int quantity, String title);
 
-	int delete(int quantity);
 
 }
