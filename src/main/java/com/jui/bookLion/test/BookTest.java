@@ -40,8 +40,6 @@ public class BookTest extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
-	
-
 	}
 
 }

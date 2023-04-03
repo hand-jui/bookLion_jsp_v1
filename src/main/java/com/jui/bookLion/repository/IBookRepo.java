@@ -8,5 +8,4 @@ public interface IBookRepo {
 
 	int update(int sale, int quantity, String title);
 
-
 }

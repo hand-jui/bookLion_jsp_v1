@@ -35,7 +35,7 @@ public class BookDAO implements IBookRepo {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			
+
 		}
 		return null;
 	}
@@ -43,7 +43,7 @@ public class BookDAO implements IBookRepo {
 	@Override
 	public int update(int sale, int quantity, String title) {
 		int resultRow = 0;
-		String queryStr  = " UPDATE booklist SET sale = ?, quantity = ? WHERE title = ? ";
+		String queryStr = " UPDATE booklist SET sale = ?, quantity = ? WHERE title = ? ";
 		try {
 			pstmt = conn.prepareStatement(queryStr);
 			pstmt.setInt(1, sale);

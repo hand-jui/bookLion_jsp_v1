@@ -8,7 +8,7 @@ public class UserDTO {
 	private String password;
 	private String phone;
 	private String email;
-	
+
 	public UserDTO() {
 		// TODO Auto-generated constructor stub
 	}

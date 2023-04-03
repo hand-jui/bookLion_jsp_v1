@@ -20,14 +20,16 @@
 body {
 	font-family: 'Gowun Dodum', sans-serif;
 	font-family: 'Noto Sans Mono', monospace;
-	height: 100%;
 }
 
 .login-container {
+	height: auto;
+	min-height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding-bottom: 160px;
 }
 
 h1 {
@@ -37,7 +39,13 @@ h1 {
 	align-items: center;
 }
 
-.form-container {
+form {
+
+
+
+}
+
+.info-wrap {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -45,7 +53,7 @@ h1 {
 	padding: 30px;
 }
 
-.form-container label {
+.info-wrap label {
 	margin: 10px;
 }
 
@@ -78,7 +86,9 @@ input[type=submit]:hover {
 	background-color: #063812;
 }
 
-footer {
+.footer-wrap {
+	position: relative;
+	transform: translateY(-100%);
 	height: 160px;
 	background-color: #030;
 	display: flex;
@@ -89,8 +99,25 @@ footer {
 	flex-direction: column;
 }
 
-footer p {
+
+.footer-inner {
+
+
+
+}
+
+.footer-content-wrap {
+
+
+}
+
+
+.footer-info p {
 	padding: 10px 0 0 0;
+}
+
+.copyright p {
+
 }
 </style>
 <script type="text/javascript">
@@ -103,7 +130,7 @@ footer p {
 	<div class="login-container">
 		<h1>LogIn</h1>
 			<form action="/bookLion/userTest?action=select" method="post">
-			<div class="form-container">
+			<div class="info-wrap">
 				<label> 아이디 &nbsp; <input type="text" id="userid" name="userid" required="required"></label>
 				<label> 비밀번호 &nbsp; <input type="password" id="password" name="password" required="required"></label>
 			</div>

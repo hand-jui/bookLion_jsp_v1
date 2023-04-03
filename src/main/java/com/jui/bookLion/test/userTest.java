@@ -63,7 +63,7 @@ public class userTest extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("id", result.getId());
 			session.setAttribute("password", result.getPassword());
-			
+
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/welcome.jsp");
 			dispatcher.forward(request, response);
 
