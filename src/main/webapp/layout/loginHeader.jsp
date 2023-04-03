@@ -1,15 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-String name = (String) session.getAttribute("name");
-if(name==null){
-	response.sendRedirect("welcom.jsp");
-}
 
 
-
-
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +16,6 @@ if(name==null){
 		<header class="header-wrap">
 			<div class="service_wrap">
 				<div class="customer_service_box">
-					<p>책사자 <b><%=name %>~</b></p>
 					<a href="/bookLion/test/loginForm.jsp"><p>로그아웃</p></a>
 					<a href="/bookLion/test/joinUsForm.jsp">회원가입</a>
 				</div>

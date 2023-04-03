@@ -3,12 +3,11 @@
 
 <%
 String id = (String) session.getAttribute("id");
+System.out.println(id);
 if(id!=null){%>
-
-	<jsp:include page="layout/loginHeader.jsp" />
-
+<jsp:include page="/layout/loginHeader.jsp" />
 <% } else { %>
-<jsp:include page="layout/header.jsp" />
+<jsp:include page="/layout/header.jsp" />
 
 <%} %>
 <main>

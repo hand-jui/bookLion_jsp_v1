@@ -5,8 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
-<link rel="stylesheet" href="/bookLion/css/welcome.css">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+Mono:wght@600&display=swap"
+	rel="stylesheet">
 <style type="text/css">
 * {
 	margin: 0;
@@ -17,25 +20,62 @@
 body {
 	font-family: 'Gowun Dodum', sans-serif;
 	font-family: 'Noto Sans Mono', monospace;
-	height: 100%;  	
+	height: 100%;
+}
+
+.login-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	padding: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .form-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-
-
+	align-items: flex-end;
+	padding: 30px;
 }
 
-fieldset {
+.form-container label {
+	margin: 10px;
+}
+
+.btn-wrap {
 	display: flex;
-	border-style: none;
+	margin: 0 30px;
+	align-items: center;
+	justify-content: center;
 }
 
-.button-section {
-	
+.btn-wrap input{
+	padding: 10px;
+}
+
+input[type="text"], input[type="password"], input[type="submit"] {
+	padding: 8px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+
+input[type=submit] {
+	background-color: #030;
+	color : #fff;
+	border: none;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #063812;
 }
 
 footer {
@@ -60,32 +100,24 @@ footer p {
 </script>
 </head>
 <body>
+	<div class="login-container">
+		<h1>LogIn</h1>
+			<form action="/bookLion/userTest?action=select" method="post">
+			<div class="form-container">
+				<label> 아이디 &nbsp; <input type="text" id="userid" name="userid" required="required"></label>
+				<label> 비밀번호 &nbsp; <input type="password" id="password" name="password" required="required"></label>
+			</div>
+			<div class="btn-wrap">
+				<input type="submit" value="로그인">
+				<input type="submit" value="회원가입" onclick="goJoinUsForm()">
+			</div>
+			</form>
 
-<div class="form-container">
-
-	<form action="/bookLion/userTest?action=select" method="post">
-		<label>아이디</label>
-		<input type="text" id="userid" name="userid" required="required"> 
-		<label>비밀번호</label>
-		<input type="password" id="password" name="password" required="required">
-		<input type="submit" value="로그인">
-		<input type="submit" value="회원가입" onclick="goJoinUsForm()">
-	</form>
-
-	<%
-	if (session.getAttribute("userid") != null) {
-	%>
-
-	<p>
-		현재 로그인 상태입니다. 사용자 아이디 :
-		<%=session.getAttribute("userid")%>
-	</p>
-
-
-	<%
-	}
-	%>
-
-</div>
-
+			<%if (session.getAttribute("userid") != null) { %>
+			<p>
+				현재 로그인 상태입니다. 사용자 아이디 :
+				<%=session.getAttribute("userid")%>
+			</p>
+			<%} %>
+		</div>
 	<jsp:include page="/layout/footer.jsp" />

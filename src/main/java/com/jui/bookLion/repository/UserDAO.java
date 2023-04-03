@@ -45,6 +45,7 @@ public class UserDAO implements IUserRepo {
 
 	@Override
 	public UserDTO logIn(String id, String password) {
+		UserDTO dto = new UserDTO();
 		ResultSet rs = null;
 		String queryStr = " SELECT * FROM user WHERE id = ? AND password = ? ";
 		try {
@@ -52,16 +53,18 @@ public class UserDAO implements IUserRepo {
 			pstmt.setString(1, id);
 			pstmt.setString(2, password);
 			rs = pstmt.executeQuery();
-			String userid = rs.getString("userid");
-			if (rs.next()) {
-				if (password.equals(rs.getString("password"))) {
-				}
-
+			while (rs.next()) {
+				String uId = rs.getString("id");
+				String uPassword = rs.getString("password");
+				String name = rs.getString("name");
+				dto.setName(name);
+				dto.setId(uId);
+				dto.setPassword(uPassword);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return null;
+		return dto;
 	}
 
 	@Override

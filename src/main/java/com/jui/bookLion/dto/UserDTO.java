@@ -8,6 +8,10 @@ public class UserDTO {
 	private String password;
 	private String phone;
 	private String email;
+	
+	public UserDTO() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public UserDTO(int no, String name, String id, String password, String phone, String email) {
 		this.no = no;
