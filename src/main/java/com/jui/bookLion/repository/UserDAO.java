@@ -17,7 +17,7 @@ public class UserDAO implements IUserRepo {
 		dbHelper = new DBHelper();
 		conn = dbHelper.getConnection();
 	}
-
+	
 	@Override
 	public int joinUs(UserDTO dto) {
 		int resultCount = 0;
@@ -45,21 +45,29 @@ public class UserDAO implements IUserRepo {
 
 	@Override
 	public UserDTO logIn(String id, String password) {
-		UserDTO dto = new UserDTO();
+		UserDTO dto = null;
 		ResultSet rs = null;
 		String queryStr = " SELECT * FROM user WHERE id = ? AND password = ? ";
+		
+		System.out.println(id);
+		System.out.println(password);
 		try {
 			pstmt = conn.prepareStatement(queryStr);
-			pstmt.setString(1, id);
-			pstmt.setString(2, password);
+			pstmt.setString(1, id.trim());
+			pstmt.setString(2, password.trim());
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				String uId = rs.getString("id");
 				String uPassword = rs.getString("password");
 				String name = rs.getString("name");
+				String phone = rs.getString("phone");
+				String email = rs.getString("email");
+				dto = new UserDTO();
 				dto.setName(name);
 				dto.setId(uId);
 				dto.setPassword(uPassword);
+				dto.setPhone(phone);
+				dto.setEmail(email);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

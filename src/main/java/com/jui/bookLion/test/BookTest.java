@@ -1,7 +1,7 @@
 package com.jui.bookLion.test;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,16 +23,30 @@ public class BookTest extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		BookDAO dao = new BookDAO();
+		String category = request.getParameter("category");
+		BookDTO dto = new BookDTO(category);
 
-		String action = request.getParameter("action");
-		String title = request.getParameter("title");
-
-		if (action.equals("select")) {
-			BookDTO resultList = dao.select(title);
-			request.setAttribute("list", resultList);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("test/serchForm.jsp");
+		ArrayList<BookDTO> resultList = dao.select(dto);
+		
+		request.setAttribute("list", resultList);
+		
+		if(category.equals("self")) {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("self.jsp");
+			dispatcher.forward(request, response);
+		} else if (category.equals("new")) {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("new.jsp");
+			dispatcher.forward(request, response);
+		} else if (category.equals("novel")) {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("novel.jsp");
+			dispatcher.forward(request, response);
+		} else if (category.equals("essay")) {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("essay.jsp");
 			dispatcher.forward(request, response);
 		}
+		
+
+		
+				
 
 	}
 

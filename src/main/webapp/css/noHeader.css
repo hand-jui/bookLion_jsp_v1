@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Gowun Dodum', sans-serif;
+	height: 100%;
+}
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 160px;
+	height: 80vh;
+}
+
+h1 {
+	padding: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+form .info-wrap {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+	padding: 30px;
+}
+
+.user-info label {
+	margin: 10px;
+}
+
+input[type="text"], input[type="password"], [type="tel"], input[type="submit"], input[type="email"]
+	{
+	padding: 8px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+
+input[type=submit] {
+	margin: 10px;
+	background-color: #030;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+.form-container input[type=submit]:hover {
+	background-color: #298421;
+}
+
+form .btn-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+footer {
+	height:100%;
+	background-color: #030;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #ccc;
+	flex-direction: column;
+}
+
+footer p {
+	padding: 10px 0 0 0;
+}
+
+.footer {
+	height: 20vh;
+}

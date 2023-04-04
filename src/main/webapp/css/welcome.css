@@ -7,6 +7,7 @@
 }
 
 body {
+	font-family: 'Gowun Dodum', sans-serif;
 	flex-direction: column;
 	justify-content: center;
 	display: flex;

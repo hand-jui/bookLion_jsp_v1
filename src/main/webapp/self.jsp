@@ -1,26 +1,55 @@
+<%@ page import="com.jui.bookLion.dto.BookDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="java.util.*"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
+
 <jsp:include page="/layout/header.jsp" />
 
+<style>
+.flex-item-child{
+	flex-wrap: wrap;
+}
+.book-info{
+	display:flex;
+	width: 20vw;
+}
+.book-info-wrap{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+</style>
 <section>
 	<div class="flex-container">
 		<div class="flex-item">
 			<div class="flex-item-child">
-				c-item1
+
+				<c:forEach var="booklist" items="${list}">
+
+
+					<div class="book-info">
+						<div class="img-wrap">
+							<img src ="image/${booklist.img}.jpg">
+						</div>
+						
+						<div class="book-info-wrap">
+							<div class="title">${booklist.title}</div>
+							<div class="info">${booklist.author} · ${booklist.publisher} · ${booklist.pubdate}</div>
+							<div class="price">${booklist.price}</div>
+						</div>
+					</div>
+
+
+
+
+
+				</c:forEach>
+
 
 			</div>
-			<div class="flex-item-child">c-item2</div>
-			<div class="flex-item-child">c-item3</div>
-		</div>
-		<div class="flex-item">
-			<div class="flex-item-child">c-item4</div>
-			<div class="flex-item-child">c-item5</div>
-			<div class="flex-item-child">c-item6</div>
-		</div>
-		<div class="flex-item">
-			<div class="flex-item-child">c-item7</div>
-			<div class="flex-item-child">c-item8</div>
-			<div class="flex-item-child">c-item9</div>
 		</div>
 	</div>
 </section>

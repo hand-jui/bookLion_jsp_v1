@@ -3,7 +3,9 @@ package com.jui.bookLion.dto;
 public class BookDTO {
 
 	private int id;
-	private String category;
+	private int c_id;
+	private String c_name;
+	private String img;
 	private String title;
 	private String author;
 	private String publisher;
@@ -12,10 +14,16 @@ public class BookDTO {
 	private int sale;
 	private int quantity;
 
-	public BookDTO(int id, String category, String title, String author, String publisher, String pubdate, int price,
-			int sale, int quantity) {
+	public BookDTO(String c_name) {
+		this.c_name = c_name;
+	}
+
+	public BookDTO(int id, int c_id, String c_name, String img, String title, String author, String publisher,
+			String pubdate, int price, int sale, int quantity) {
 		this.id = id;
-		this.category = category;
+		this.c_id = c_id;
+		this.c_name = c_name;
+		this.img = img;
 		this.title = title;
 		this.author = author;
 		this.publisher = publisher;
@@ -33,12 +41,28 @@ public class BookDTO {
 		this.id = id;
 	}
 
-	public String getCategory() {
-		return category;
+	public int getC_id() {
+		return c_id;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
+	public void setC_id(int c_id) {
+		this.c_id = c_id;
+	}
+
+	public String getC_name() {
+		return c_name;
+	}
+
+	public void setC_name(String c_name) {
+		this.c_name = c_name;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 	public String getTitle() {
@@ -99,9 +123,9 @@ public class BookDTO {
 
 	@Override
 	public String toString() {
-		return "BookDTO [id=" + id + ", category=" + category + ", title=" + title + ", author=" + author
-				+ ", publisher=" + publisher + ", pubdate=" + pubdate + ", price=" + price + ", sale=" + sale
-				+ ", quantity=" + quantity + "]";
+		return "BookDTO [id=" + id + ", c_id=" + c_id + ", c_name=" + c_name + ", img=" + img + ", title=" + title
+				+ ", author=" + author + ", publisher=" + publisher + ", pubdate=" + pubdate + ", price=" + price
+				+ ", sale=" + sale + ", quantity=" + quantity + "]";
 	}
 
 }
