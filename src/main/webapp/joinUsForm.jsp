@@ -12,11 +12,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/bookLion/css/noHeader.css"> 
-<script type="text/javascript">
-	function goWelcome() {
-		location.href = "welcome.jsp";
-	}
-</script>
 </head>
 <body>
 	<div class="form-container">
@@ -51,6 +46,10 @@
 
 		</footer>
 	</div>
-
+<script type="text/javascript">
+	function goWelcome() {
+		location.href = "welcome.jsp";
+	}
+</script>
 </body>
 </html>

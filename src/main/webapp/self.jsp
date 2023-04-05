@@ -4,61 +4,30 @@
 <%@ page import="java.util.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
-
 <jsp:include page="/layout/header.jsp" />
 
-<style>
-.flex-item-child{
-	flex-wrap: wrap;
-}
-.book-info{
-	display:flex;
-	width: 20vw;
-}
-.book-info-wrap{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-</style>
-<section>
-	<div class="flex-container">
-		<div class="flex-item">
-			<div class="flex-item-child">
-
-				<c:forEach var="booklist" items="${list}">
-
-
-					<div class="book-info">
-						<div class="img-wrap">
-							<img src ="image/${booklist.img}.jpg">
-						</div>
-						
-						<div class="book-info-wrap">
-							<div class="title">${booklist.title}</div>
-							<div class="info">${booklist.author} · ${booklist.publisher} · ${booklist.pubdate}</div>
-							<div class="price">${booklist.price}</div>
+<section class="section_wrap">
+	<div class="content_container">
+		<div class="content">
+			<c:forEach var="booklist" items="${list}">
+				<div class="book_info">
+					<div class="img_wrap">
+						<img src="image/${booklist.img}.jpg">
+					</div>
+					<div class="book_info_wrap">
+						<div class="title"><b>${booklist.title}</b></div>
+						<div class="info"><b>${booklist.author}</b> · ${booklist.publisher} · ${booklist.pubdate}</div>
+						<div class="price"><b>${booklist.price}</b> 원</div>
+						<div class="order_wrap">
+							<a href="#">
+								<img alt="구매하기" src="https://cdn-icons-png.flaticon.com/128/8447/8447133.png" style="width:50px; height:50px;">
+							</a>
 						</div>
 					</div>
-
-
-
-
-
-				</c:forEach>
-
-
-			</div>
+				</div>
+			</c:forEach>
 		</div>
 	</div>
 </section>
-
-
-
-
-
-
-
 
 <jsp:include page="/layout/footer.jsp" />

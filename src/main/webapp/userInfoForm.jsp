@@ -32,30 +32,46 @@ if (id == null) {
 
 body {
 	font-family: 'Gowun Dodum', sans-serif;
-	flex-direction: column;
-	height: 100%;
-}
-
-.wrap {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	align-items: center;
-	min-height: 100%;
-	position: relative;
-	padding-bottom: 160px;
-	flex-direction: column;
-}
-
-
-
-header {
-	flex: 1 0 160px;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
+}
+
+.header_wrap {
+	width: 100%;
 	margin: 0;
-	padding: 20px 20px;
+	padding: 20px 0;
+}
+
+.service_wrap {
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+	align-items: flex-end;
+	padding-right: 50px;
+}
+
+.name_tag {
+	display: flex;
+	flex-direction: row;
+}
+
+.customer_service_box a {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-end;
+	text-decoration: none;
+	color: black;
+}
+
+.header_inner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
 }
 
 .service-wrap {
@@ -63,18 +79,6 @@ header {
 	flex-direction: column;
 	align-items: flex-end;
 
-}
-
-.service-wrap .user-service {
-	display: flex;
-	align-items: flex-end;
-	flex-direction: column;
-
-}
-
-header .header-inner {
-	padding: 5px 0;
-	width: 100px;
 }
 
 .content {
@@ -122,53 +126,49 @@ footer {
 	flex-direction: column;
 	bottom: 0;
 }
+
+.footer_content_wrap p {
+	margin: 10px;
+}
 </style>
 </head>
 <body>
-	<div class="wrap">
-		<header>
-			<div class="service-wrap">
-				<div class="user-service">
-					<p>책사자 <b><%=name%></b></p>
+	<header class="header_wrap">
+		<div class="service_wrap">
+				<div class="customer_service_box">
+					<div class="name_tag">
+						<img src="https://cdn-icons-png.flaticon.com/512/7384/7384395.png" style="width:20px; height:20px;">
+						&nbsp; 책사자 &nbsp; <b><%=name%></b>
+					</div>
 					<a href="/bookLion/logout.jsp"><p>로그아웃</p></a>
 				</div>
-				<div class="header-inner">
-					<div class="logo_box">
-						<a href="/bookLion/welcome.jsp"><img alt="" src="image/main.jpg"></a>
-					</div>
-				</div>
-			</div>
-		</header>
-		<div class="content">
-			<section>
-				<h1>회원 정보</h1>
-				<form action="/bookLion/userTest?action=update" method="post">
-					<div class="user-info">
-						
-						<label for="username">이름 <input type="text" name="name" value="<%=name%>" readonly="readonly"></label>
-						<label for="userid">아이디 <input type="text"  name="id" value="<%=id%>" readonly="readonly"></label>
-						<label for="password">비밀번호 <input type="password" name="password" value="<%=password%>"></label>
-						<label for="phone">전화번호 <input type="text" name="phone" value="<%=phone%>"></label>
-						<label for="email">이메일 <input type="email" name="email" value="<%=email%>"></label>
-						
-					</div>
-					<input type="submit" value="수정">
-				</form>
-			</section>
 		</div>
-		<footer>
-			<div class="footer-inner">
-				<div class="footer-content-wrap">
-					<address class="footer-info">
-						<p>부산 부산진구 중앙대로 749</p>
-						<p>jLion86@bookLion.com</p>
-					</address>
-				</div>
-				<div class="copyright">
-					<p>ⓒ BookLion. All rights reserved.</p>
-				</div>
+		<div class="header_inner">
+			<div class="logo_box">
+				<a href="/bookLion/welcome.jsp">
+					<img alt="" src="image/main.jpg" style="width: 800px;">
+				</a>
 			</div>
-		</footer>
-	</div>
-</body>
-</html>
+		</div>
+	</header>	
+	
+	<section class="section_wrap">
+		<div class="content_container">
+			<h1>회원 정보</h1>
+			<form action="/bookLion/userTest?action=update" method="post">
+				<div class="user-info">
+						
+					<label for="username">이름 <input type="text" name="name" value="<%=name%>" readonly="readonly"></label>
+					<label for="userid">아이디 <input type="text"  name="id" value="<%=id%>" readonly="readonly"></label>
+					<label for="password">비밀번호 <input type="password" name="password" value="<%=password%>"></label>
+					<label for="phone">전화번호 <input type="text" name="phone" value="<%=phone%>"></label>
+					<label for="email">이메일 <input type="email" name="email" value="<%=email%>"></label>
+						
+				</div>
+				<input type="submit" value="수정">
+			</form>
+		</div>
+	</section>
+	
+	
+<jsp:include page="/layout/footer.jsp" />
