@@ -50,6 +50,10 @@ body {
 	padding: 10px;
 }
 
+.logo_box {
+	margin-bottom: 20px;
+}
+
 .header_bottom {
 	display: flex;
 	flex-direction: column;

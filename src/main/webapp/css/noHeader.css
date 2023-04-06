@@ -11,6 +11,24 @@ body {
 	height: 100%;
 }
 
+.header_wrap {
+	width: 100%;
+	margin: 0;
+	padding: 20px 0;
+}
+
+.logo_box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo_box a {
+	margin-top: 30px;
+	padding-top: 30px;
+}
+
 .form-container {
 	display: flex;
 	flex-direction: column;
@@ -21,7 +39,7 @@ body {
 }
 
 h1 {
-	padding: 50px;
+	padding: 30px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

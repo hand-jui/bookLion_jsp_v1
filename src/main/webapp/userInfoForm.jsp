@@ -74,57 +74,72 @@ body {
 	padding: 10px;
 }
 
-.service-wrap {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-
-}
-
-.content {
+.section_wrap {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding-bottom: 160px;
+}
+
+.content_container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 80px;
 }
 
 h1 {
-	padding: 50px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.content form {
-	display: flex;
-	flex-direction: column;
-}
-
-form .user-info {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-end;
 	padding: 30px;
 }
 
-.user-info label {
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+.user_info {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: flex-end;
+}
+
+.user_info label {
 	margin: 10px;
 }
 
-footer {
-	/* footer를 aside위에 올리기 위해 사용(부유객체) */
-	position: absolute;
-	width: 100%;
-	line-height: 60px;
-	color: #ccc;
+
+input[type="text"], input[type="password"], [type="tel"], input[type="submit"], input[type="email"]
+	{
+	padding: 8px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+
+input[type=submit] {
+	margin: 10px;
 	background-color: #030;
-	justify-content: center;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+.form-container input[type=submit]:hover {
+	background-color: #298421;
+}
+
+.footer_wrap {
+	background-color: #030;
+	color: #fff;
+	display: flex;
 	align-items: center;
 	text-align: center;
-	flex-direction: column;
-	bottom: 0;
+	justify-content: center;
+	width: 100%;
+	height: 160px;
 }
 
 .footer_content_wrap p {
@@ -156,13 +171,13 @@ footer {
 		<div class="content_container">
 			<h1>회원 정보</h1>
 			<form action="/bookLion/userTest?action=update" method="post">
-				<div class="user-info">
+				<div class="user_info">
 						
-					<label for="username">이름 <input type="text" name="name" value="<%=name%>" readonly="readonly"></label>
-					<label for="userid">아이디 <input type="text"  name="id" value="<%=id%>" readonly="readonly"></label>
+					<label for="username">이름 &nbsp; &nbsp; <input type="text" name="name" value="<%=name%>" readonly="readonly"></label>
+					<label for="userid">아이디 &nbsp;  <input type="text"  name="id" value="<%=id%>" readonly="readonly"></label>
 					<label for="password">비밀번호 <input type="password" name="password" value="<%=password%>"></label>
 					<label for="phone">전화번호 <input type="text" name="phone" value="<%=phone%>"></label>
-					<label for="email">이메일 <input type="email" name="email" value="<%=email%>"></label>
+					<label for="email">이메일 &nbsp; <input type="email" name="email" value="<%=email%>"></label>
 						
 				</div>
 				<input type="submit" value="수정">

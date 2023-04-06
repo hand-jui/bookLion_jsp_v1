@@ -14,6 +14,14 @@
 <link rel="stylesheet" href="/bookLion/css/noHeader.css"> 
 </head>
 <body>
+	<header class="header_wrap">
+
+	<div class="logo_box">
+		<a href="/bookLion/welcome.jsp">
+			<img alt="" src="image/main.jpg" style="width: 800px;">
+		</a>
+	</div>
+	</header>
 	<div class="form-container">
 		<h1>join</h1>
 		<form action="/bookLion/userTest?action=insert" method="post" >
